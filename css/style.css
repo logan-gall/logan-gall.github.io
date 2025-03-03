@@ -1,0 +1,993 @@
+/* ========================= */
+/*  CSS Variables for Consistent Spacing */
+/* ========================= */
+:root {
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 30px;
+    --spacing-xlarge: 40px;
+    --section-margin: 40px 0; /* Top and Bottom */
+    --header-margin-bottom: 0px;
+    --item-margin-bottom: 20px;
+    --container-padding: 10px;
+    --content-padding: 2px;
+    --border-radius: 8px;
+    --border-width: 2px;
+}
+
+/* ========================= */
+/*  General Styles */
+/* ========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column; /* For fixed header */
+}
+
+.container {
+    width: 100%;
+    padding: var(--container-padding);
+    box-sizing: border-box;
+}
+
+/* ========================= */
+/*  Loader Overlay Styles */
+/* ========================= */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Match main background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Above all other content */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.loader-fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* The bouncing ball */
+.ball {
+    width: 20px;
+    height: 20px;
+    background-color: #3dafff; /* Blue color */
+    border-radius: 50%;        /* Make it a circle */
+    animation: bounce 2s infinite;
+	animation-delay: 0.5s;     /* Delay before animation starts */
+    /* Add a subtle shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Define the keyframes for the bounce animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+        animation-timing-function: ease-in;
+    }
+    /* First bounce: normal speed */
+    25% {
+        transform: translateY(-100px);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: ease-in;
+    }
+    /* Second bounce: slightly slower */
+    75% {
+        transform: translateY(-100px);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Hide main content initially */
+#main-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Show main content after loader */
+#main-content.visible {
+    opacity: 1;
+}
+
+/* ========================= */
+/*  Top Navigation Bar */
+/* ========================= */
+#top-nav {
+    position: fixed;
+    top: -70px; /* Start off-screen */
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    border-bottom: var(--border-width) solid #333;
+    z-index: 1000;
+    transition: top 0.5s ease-in-out; /* Slide animation */
+    padding: var(--spacing-small) 0; /* Consistent vertical padding */
+    box-sizing: border-box;
+}
+
+#top-nav.show {
+    top: 0; /* Slide into view */
+}
+
+#top-nav .nav-content {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-medium);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-name {
+    font-size: 1.2rem;
+    margin-left: var(--spacing-medium);
+    flex: 1;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+}
+
+.nav-social-links a {
+    margin-left: var(--spacing-medium);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+}
+
+.nav-social-links img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Remove default focus outline for social links */
+.nav-social-links a {
+    outline: none; /* Removes the purple focus outline */
+    text-decoration: none; /* Ensures no underline appears */
+}
+
+#top-nav.show .nav-profile-img,
+#top-nav.show .nav-name,
+#top-nav.show .nav-social-links a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================= */
+/*  Main Content Styles */
+/* ========================= */
+.content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0px auto 0 auto; /* Add top margin to prevent overlap with fixed header */
+    overflow-y: auto;
+    padding: var(--content-padding);
+    background-color: #000;
+    box-sizing: border-box;
+}
+
+/* ========================= */
+/*  Profile Grid Styles */
+/* ========================= */
+#profile-container {
+    margin-bottom: var(--spacing-large);
+}
+
+#profile-container .profile-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px; /* Column widths: Profile, Content, Job Info */
+    grid-template-rows: 100px auto; /* Three rows */
+    grid-gap: 20px;
+	row-gap: 15px;
+    align-items: center;
+}
+
+/* Column 1: Profile Photo (Spanning 3 Rows) */
+#profile-container .profile-photo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4; /* Span all three rows */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile-container .profile-photo .profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+/* Column 2, Row 1: Name */
+#profile-container .name {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+	align-self: end;
+}
+
+#profile-container .name-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Column 3, Row 1: Job Title (Right-Aligned) */
+#profile-container .job-title {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center;
+    justify-self: end; /* Align the entire grid item to the right */
+	align-self: end;
+}
+
+.job-description {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #aaa;
+    text-align: right; /* Align text within the container to the right */
+	white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Column 3, Row 2: Location (Right-Aligned) */
+#profile-container .location {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center;
+    justify-self: end; /* Align the entire grid item to the right */
+}
+
+.location-description {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #bbb;
+    text-align: right; /* Align text within the container to the right */
+}
+
+/* Column 2, Row 2: Dynamic Text */
+#profile-container .dynamic-text {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: center;
+}
+
+#typing-text-container {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#typing-text {
+    display: inline-block; /* Ensure the cursor stays with the text */
+    border-right: 2px solid white; /* Cursor effect */
+    animation: blink 0.7s steps(1) infinite;
+}
+
+/* Typing Text Cursor Animation */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* ========================= */
+/*  Additional Text Section */
+/* ========================= */
+#additional-text h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: var(--spacing-small);
+    padding: 0;
+}
+
+#additional-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    background-color: #000;
+    border-radius: 10px;
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: var(--border-width) solid #3dafff; /* Hot Pink */
+    display: inline-block; /* Shrink-wrap the container */
+    margin-bottom: var(--spacing-large);
+}
+
+
+/* ========================= */
+/*  New Animation Keyframes */
+/* ========================= */
+
+/* Keyframes for fading in from the left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for fading in from the bottom */
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Initial state for animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateX(-50px); /* Customize the starting position */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* When element becomes visible */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateX(0); /* Reset position */
+}
+
+/* Initial state for animation */
+.animate-on-scroll-bottom {
+    opacity: 0;
+    transform: translateY(50px); /* Customize the starting position */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* When element becomes visible */
+.animate-on-scroll-bottom.visible {
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
+}
+
+
+/* ========================= */
+/*  Projects Section */
+/* ========================= */
+#projects {
+    margin: var(--section-margin);
+}
+
+#projects h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: var(--spacing-small);
+    padding-bottom: 0;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-auto-rows: 300px; /* Default row height */
+    grid-gap: var(--spacing-medium);
+}
+
+/* Project Items */
+.project-item {
+    background-color: #222;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: var(--spacing-small);
+    box-sizing: border-box;
+}
+
+.project-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.project-info p {
+    margin: var(--spacing-small) 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: var(--spacing-small);
+    color: #3dafff; /* Pink color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Long (Double-Height) Project Items */
+.project-item-tall {
+    grid-row: span 2; /* Span two rows vertically */
+}
+
+/* General Project Image Style */
+.project-image {
+	position: relative;
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	transform: translateZ(0px);
+}
+
+/* Initial state for individual project items */
+.project-item {
+    opacity: 0;
+    transform: translateX(-50px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+	animation-delay: 0s;
+	-webkit-backface-visibility: hidden;
+	transform: translateZ(0px);
+}
+
+/* Class to make items visible */
+.project-item.visible {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0px);
+}
+
+/* ========================= */
+/*  Specific Grid Positioning */
+/* ========================= */
+/* First Row */
+#project-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3; /* Spans rows 1-2 */
+}
+
+#project-2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+/* Second Row */
+#project-3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4; /* Spans rows 2-3 */
+}
+
+/* Third Row */
+#project-4 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+/* Fourth Row */
+#project-5 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 6; /* Spans rows 4-5 */
+	background-color: #000;
+}
+
+#project-6 {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+/* Fifth Row */
+#project-7 {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+
+/* ========================= */
+/*  Resume Sections */
+/* ========================= */
+#education,
+#work-experience,
+#skills {
+    margin: var(--section-margin);
+}
+
+#education {
+	margin-top: 20px;
+}
+
+#resume-header {
+    margin-bottom: 0px; /* Adjust this value as needed */
+}
+
+.resume-section {
+    margin-bottom: var(--spacing-large);
+}
+
+.resume-section h1 {
+	font-size: 2rem;
+	margin-top: 0;
+    margin-bottom: var(--spacing-small);
+    padding-bottom: 0;
+}
+
+.resume-section h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: var(--spacing-small);
+    padding-bottom: 0;
+}
+
+/* Make Section Headers White */
+#additional-text h2,
+#projects h2,
+#education h2,
+#work-experience h2,
+#skills h2 {
+    color: #FFF; /* White */
+}
+
+/* ========================= */
+/*  Resume Section Header with Download Button */
+/* ========================= */
+#resume-header {
+    display: flex;
+    justify-content: space-between; /* Align header to the left and button to the right */
+    align-items: center; /* Vertically align items */
+    margin-bottom: var(--spacing-medium);
+}
+
+#resume-header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #fff;
+}
+
+.download-button {
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: var(--border-width) solid #3dafff; /* Pink border */
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: #fff; /* White text */
+    background-color: transparent;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.download-button:hover {
+    background-color: #3dafff; /* Pink background on hover */
+    color: #FFF; /* Black text on hover */
+}
+
+/* ========================= */
+/*  Resume Location Styles   */
+/* ========================= */
+.resume-location {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-small); /* Adjust spacing as needed */
+}
+
+.resume-institution {
+    font-size: 1.1em; /* Optional: Adjust font size */
+}
+
+.resume-location-text {
+    font-size: 1.1em; /* Optional: Adjust font size */
+    color: #bbb; /* Lighter color for contrast */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* ========================= */
+/*  Common Styles for Items */
+/* ========================= */
+.education-item,
+.work-item,
+.skills-item {
+    position: relative;
+    padding-left: 0;
+    margin-bottom: var(--item-margin-bottom);
+}
+
+.education-item h4,
+.work-item h4,
+.skills-item h4 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-small);
+}
+
+/* Resume Details Container */
+.resume-details {
+    border-left: var(--border-width) solid #3dafff; /* Hot Pink */
+    padding-left: var(--spacing-small);
+    margin-left: var(--spacing-small);
+}
+
+.resume-details ul {
+    list-style-type: disc;
+    padding-left: var(--spacing-medium);
+    margin-top: 0;
+    margin-bottom: var(--spacing-medium);
+}
+
+.resume-details ul li {
+	max-width: 50vw;
+    margin-bottom: var(--spacing-small);
+    line-height: 1.5;
+}
+
+.resume-details p {
+    margin-top: 0;
+    margin-bottom: var(--spacing-small);
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* ========================= */
+/*  New Styles for Titles and Dates */
+/* ========================= */
+/* Education Titles */
+.education-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-small);
+}
+
+.education-title strong {
+    font-size: 1.1em; /* Increase font size slightly */
+}
+
+.education-dates {
+    font-size: 1.1em; /* Slightly smaller font size for dates */
+    color: #bbb; /* Lighter color for contrast */
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Work Titles */
+.work-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-small);
+}
+
+.work-title strong {
+    font-size: 1.1em; /* Increase font size slightly */
+}
+
+.work-dates {
+    font-size: 1.0em; /* Slightly smaller font size for dates */
+    color: #bbb; /* Lighter color for contrast */
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Skills Titles (Optional) */
+.skills-title strong {
+    font-size: 1.1em; /* Increase font size slightly */
+}
+
+/* ========================= */
+/*  Bullet Point Colors */
+/* ========================= */
+/* Education, Work Experience, and Skills Bullet Points */
+#education ul li::marker,
+#work-experience ul li::marker,
+#skills ul li::marker {
+    color: #FFF; /* White */
+}
+
+/* ========================= */
+/*  Modal Styles */
+/* ========================= */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1001; /* Ensure modals appear above other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if modal content is long */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: #111;
+    margin: 5% auto; /* Center vertically */
+    padding: var(--spacing-medium);
+    border: var(--border-width) solid #3dafff; /* Hot Pink border */
+    width: 80%;
+    max-width: 600px; /* Max width of modal */
+    color: #fff;
+    border-radius: var(--border-radius);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: var(--spacing-small);
+    right: var(--spacing-medium);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Centering the <h2> Header */
+.modal-content h2 {
+    text-align: center; /* Centers the text horizontally */
+}
+
+.modal h2 {
+    margin-top: 0;
+}
+
+.close-button:focus {
+    outline: 2px solid #fff;
+}
+
+
+/* Button Container Styling */
+.button-container {
+    margin-top: 20px; /* Adds space above the buttons */
+    display: flex;
+    gap: 10px; /* Space between buttons */
+	justify-content: center;
+}
+
+/* Modal Button Styling */
+.modal-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #3dafff; /* Pink border */
+    border-radius: 5px;
+    text-decoration: none;
+    color: white; /* Pink text */
+    background-color: transparent;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover Effect for Buttons */
+.modal-button:hover {
+    background-color: #3dafff;
+    color: white;
+}
+
+/* Thank You Section Styles */
+#thank-you-section {
+    background-color: #3dafff; /* Pink background */
+    padding: 10px 20px; /* Reduce vertical padding */
+    margin: 20px auto; /* Center align */
+    border-radius: 8px; /* Rounded corners */
+    color: white;
+    font-size: 1.2rem;
+    max-width: 900px; /* Match content width */
+    width: 100%; /* Responsive full width */
+    box-sizing: border-box; /* Include padding in width */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+#thank-you-section .thank-you-content {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Spacing between the icons and the text */
+}
+
+#thank-you-section p {
+    margin: 0; /* Remove default margin */
+    font-weight: bold;
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Style the Social Links */
+#thank-you-section .thank-you-content a {
+    display: inline-block;
+}
+
+#thank-you-section .thank-you-content a img {
+    width: 25px; /* Icon size */
+    height: 25px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+#thank-you-section .thank-you-content a img:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+/* ========================= */
+/*  Responsive Design */
+/* ========================= */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-small);
+    }
+
+    .content {
+        padding: var(--spacing-small);
+        margin: 0px auto 0 auto; /* Adjust top margin for smaller screens */
+    }
+
+    #profile-container .profile-grid {
+        grid-template-columns: 1fr; /* Single column */
+        grid-template-rows: repeat(6, auto); /* Define six rows for six elements */
+        grid-gap: var(--spacing-small);
+    }
+
+    /* Profile Photo */
+    #profile-container .profile-photo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: center; /* Center-align the image */
+    }
+
+    /* Name */
+    #profile-container .name {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        display: flex;
+        justify-content: center;
+        text-align: center; /* Center text alignment */
+    }
+
+    /* Dynamic Text */
+    #profile-container .dynamic-text {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        display: flex;
+        justify-content: center;
+        text-align: center; /* Center text alignment */
+    }
+
+    /* Job Title */
+    #profile-container .job-title {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        justify-self: center;    /* Override justify-self: end; */
+        align-self: center;      /* Override align-self: end; */
+        text-align: center;      /* Center text alignment */
+    }
+
+    /* Location */
+    #profile-container .location {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        justify-self: center;    /* Override justify-self: end; */
+        align-self: center;      /* Override align-self: end; */
+        text-align: center;      /* Center text alignment */
+    }
+
+    /* Social Links */
+    #profile-container .social-links {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+        display: flex;
+        justify-content: center; /* Center social icons */
+        margin-top: var(--spacing-small);
+    }
+
+    /* Center Text Inside Job Description and Location Description */
+    .job-description,
+    .location-description {
+        text-align: center; /* Ensure the text inside is centered */
+        width: 100%;        /* Make sure it takes full width for proper centering */
+    }
+
+    /* Adjust Resume Details for Smaller Screens */
+    .resume-details {
+        border-left: 1.5px solid #3dafff; /* Slightly thinner line */
+        padding-left: var(--spacing-small);
+        margin-left: var(--spacing-small);
+    }
+    
+    /* Adjust Resume List Width for Small Screens */
+    .resume-details ul {
+        max-width: 100vw; /* Allow full width on smaller screens */
+        padding-left: var(--spacing-small); /* Adjust padding if necessary */
+    }
+
+    /* Responsive Adjustments for Titles and Dates */
+    .education-title,
+    .work-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .education-dates,
+    .work-dates {
+        text-align: left;
+        margin-top: 5px; /* Space between title and dates on small screens */
+    }
+    
+    /* Adjust Resume Location for Small Screens */
+    .resume-location {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .resume-location-text {
+        text-align: left;
+        margin-top: 5px; /* Space between institution and location */
+    }
+
+    /* Additional Adjustments for Better Spacing and Alignment */
+    #profile-container .profile-img {
+        width: 150px; /* Adjust size for smaller screens */
+        height: 150px;
+    }
+
+    .job-description,
+    .location-description {
+        font-size: 1.2rem; /* Adjust font size if necessary */
+    }
+}
+

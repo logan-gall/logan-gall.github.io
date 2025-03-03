@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags and Page Title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logan Gall Portfolio</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="assets/icons/favicon.svg" type="image/image/svg+xml">
+</head>
+<body>
+
+	<!-- Loader Overlay -->
+    <div class="loader-overlay" id="loader-overlay">
+		<div class="ball"></div>
+	</div>
+		
+    <!-- Top Navigation Bar -->
+    <header id="top-nav">
+        <div class="nav-content">
+            <img src="assets/images/profile.jpg" alt="Profile Picture" class="nav-profile-img">
+            <h1 class="nav-name">Logan Gall</h1>
+            <div class="nav-social-links">
+                <a href="https://github.com/logan-gall" target="_blank">
+                    <img src="assets/icons/github.svg" alt="GitHub">
+                </a>
+                <a href="https://linkedin.com/in/logan-gall" target="_blank">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="main-content">
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Profile Section -->
+            <section id="profile-container">
+                <div class="profile-grid">
+                    <!-- Column 1: Profile Photo (Spanning 3 Rows) -->
+                    <div class="profile-photo animate-on-scroll" data-delay="0s">
+                        <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-img">
+                    </div>
+                    
+                    <!-- Column 2, Row 1: Name -->
+                    <div class="name animate-on-scroll" data-delay="0s">
+                        <h1 class="name-title">Logan Gall</h1>
+                    </div>
+                    
+                    <!-- Column 3, Row 1: Job Title (Right-Aligned) -->
+                    <div class="job-title animate-on-scroll" data-delay="0s">
+                        <p class="job-description">Spatial Engineer</p>
+                    </div>
+                    
+                    <!-- Column 2, Row 2: Dynamic Text -->
+                    <div class="dynamic-text animate-on-scroll" data-delay="0s">
+                        <div id="typing-text-container">
+                            <span id="typing-text"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 3, Row 2: Location (Right-Aligned) -->
+                    <div class="location animate-on-scroll" data-delay="0s">
+                        <p class="location-description">Minneapolis, MN</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Me Section -->
+            <section id="additional-text">
+                <h2 class="animate-on-scroll" data-delay="0.5s">Get to Know Me</h2>
+                <p class="animate-on-scroll-bottom" data-delay="1s">
+                 My name is Logan Gall, I am a tech enthusiast and dedicated problem solver. While studying Data Science as an undergraduate at the University of Minnesota, I became increasingly interested in geospatial data, which guided my decision to pursue a GIS master's degree. In the fall of 2023, at start of my program, I conducted research at the GEMS Informatics Laboratory, where I developed machine learning models for spatiotemporal evapotranspiration prediction. I’ve had the opportunity to work on many projects utilizing spatial data science, machine learning, sensors, and computational hardware that bring out my passion for applied innovative technology. In my current role, as a Graduate Research Assistant, I spearhead the design and development of hardware chips dedicated to spatial processing operations. I always get a rush of excitement discussing complex problems, teaching new things, and fostering more connections throughout my career.
+                </p>
+            </section>
+
+			<!-- Projects Section -->
+			<section id="projects">
+				<h2 class="animate-on-scroll" data-delay="0s">Projects</h2>
+				<div class="projects-grid">
+					<!-- First Row -->
+					<!-- Left: Spatial Processing Unit -->
+					<div class="project-item animate-on-scroll" id="project-1" data-delay="0.4s">
+						<img src="assets/images/project-1.jpg" alt="project-1" class="project-image project-1-img"
+							 data-base-scale="2.0"
+							 data-scale-factor-per-px="0.003"
+							 data-min-scale="0.5"
+							 data-max-scale="5"
+							 data-left-base="-2.0%"
+							 data-left-scale-per-px="0.0%"
+							 data-left-min="0%"
+							 data-left-max="50%"
+							 data-top-base="-7.5%"
+							 data-top-scale-per-px="-0.02%"
+							 data-top-min="-100%"
+							 data-top-max="100%">
+						<div class="project-info">
+							<h3>Spatial Processing Unit</h3>
+							<p>Developed a customized hardware chip designed to perform hardware-accelerated spatial data processing and operations.</p>
+							<a href="#" class="read-more" data-modal="modal-project-1">Read More</a>
+						</div>
+					</div>
+					<!-- Right: Drone-based Wireless Control Link -->
+					<div class="project-item animate-on-scroll" id="project-2" data-delay="0.8s">
+						<img src="assets/images/project-2.jpg" alt="project-2" class="project-image project-2-img"
+							 data-base-scale="1.5"
+							 data-scale-factor-per-px="0.001"
+							 data-min-scale="0.5"
+							 data-max-scale="5.0"
+							 data-left-base="0.0%"
+							 data-left-scale-per-px="0.0%"
+							 data-left-min="-100%"
+							 data-left-max="100%"
+							 data-top-base="10.0%"
+							 data-top-scale-per-px="-0.03%"
+							 data-top-min="-100%"
+							 data-top-max="100%">
+						<div class="project-info">
+							<h3>Drone-based Wireless Control Link</h3>
+							<a href="#" class="read-more" data-modal="modal-project-2">Read More</a>
+						</div>
+					</div>
+
+					<!-- Second Row -->
+					<!-- Right: Indoor Location Estimation -->
+					<div class="project-item project-item-tall animate-on-scroll" id="project-3" data-delay="0.4s">
+						<img src="assets/images/project-3.jpg" alt="project-3" class="project-image project-3-img"
+							 data-base-scale="1.7"
+							 data-scale-factor-per-px="0.01"
+							 data-min-scale="1.0"
+							 data-max-scale="5.0"
+							 data-left-base="0%"
+							 data-left-scale-per-px="-0.12%"
+							 data-left-min="-100%"
+							 data-left-max="100%"
+							 data-top-base="-7.0%"
+							 data-top-scale-per-px="0.0%"
+							 data-top-min="-100%"
+							 data-top-max="100%">
+						<div class="project-info">
+							<h3>Indoor Location Estimation</h3>
+							<p>Analyzed the efficacy of using WiFi access point signals and machine learning to perform localization in an indoor environment.</p>
+							<a href="#" class="read-more" data-modal="modal-project-3">Read More</a>
+						</div>
+					</div>
+
+					<!-- Third Row -->
+					<!-- Left: Evapotranspiration Deep Learning & Modeling  -->
+					<div class="project-item animate-on-scroll" id="project-4" data-delay="0s">
+						<img src="assets/images/project-4.jpg" alt="project-4" class="project-image project-4-img"
+							 data-base-scale="1.5"
+							 data-scale-factor-per-px="0.002"
+							 data-min-scale="0.5"
+							 data-max-scale="5"
+							 data-left-base="0.0%"
+							 data-left-scale-per-px="0.007%"
+							 data-left-min="-100%"
+							 data-left-max="100%"
+							 data-top-base="0.0%"
+							 data-top-scale-per-px="-0.002%"
+							 data-top-min="-100%"
+							 data-top-max="100%">
+						<div class="project-info">
+							<h3>Evapotranspiration Deep Learning & Modeling</h3>
+							<a href="#" class="read-more" data-modal="modal-project-4">Read More</a>
+						</div>
+					</div>
+
+					<!-- Fourth Row -->
+					<!-- Left: Cloud-Driven Live Location Sharing -->
+					<div class="project-item project-item-tall animate-on-scroll" id="project-5" data-delay="0s">
+						<img src="assets/images/project-5.jpg" alt="project-5" class="project-image project-5-img"
+							 data-base-scale="1.74"
+							 data-scale-factor-per-px="0.0075"
+							 data-min-scale="0.0"
+							 data-max-scale="10.0"
+							 data-left-base="2.0%"
+							 data-left-scale-per-px="-0.145%"
+							 data-left-min="-100%"
+							 data-left-max="100%"
+							 data-top-base="14.0%"
+							 data-top-scale-per-px="-0.01%"
+							 data-top-min="-100%"
+							 data-top-max="100%">
+						<div class="project-info">
+							<h3>Cloud-Driven Live Location Sharing</h3>
+							<p>Created a location sharing applicaiton designed for live updates between colleagues & friends at major events, hosted using Google Cloud SQL, Build, and Run services.</p>
+							<a href="#" class="read-more" data-modal="modal-project-5">Read More</a>
+						</div>
+					</div>
+					<!-- Right: Traffic Impact Prediction Modeling -->
+					<div class="project-item animate-on-scroll" id="project-6" data-delay="0.4s">
+						<img src="assets/images/project-6.jpg" alt="project-6" class="project-image project-6-img"
+							 data-base-scale="2.5"
+							 data-scale-factor-per-px="0.01"
+							 data-min-scale="0.0"
+							 data-max-scale="5"
+							 data-left-base="0.0%"
+							 data-left-scale-per-px="0.1%"
+							 data-left-min="-100%"
+							 data-left-max="100%"
+							 data-top-base="22.5%"
+							 data-top-scale-per-px="0.0%"
+							 data-top-min="-100%"
+							 data-top-max="100%">
+						<div class="project-info">
+							<h3>Traffic Impact Prediction Modelling</h3>
+							<a href="#" class="read-more" data-modal="modal-project-6">Read More</a>
+						</div>
+					</div>
+
+					<!-- Fifth Row -->
+					<!-- Right: Motion-Based Drone Controller -->
+					<div class="project-item animate-on-scroll" id="project-7" data-delay="0.4s">
+						<img src="assets/images/project-7.jpg" alt="project-7" class="project-image project-7-img"
+							 data-base-scale="4"
+							 data-scale-factor-per-px="-0.003"
+							 data-min-scale="0.1"
+							 data-max-scale="5.0"
+							 data-left-base="0%"
+							 data-left-scale-per-px="0.015%"
+							 data-left-min="-100%"
+							 data-left-max="100%"
+							 data-top-base="18.0%"
+							 data-top-scale-per-px="-0.023%"
+							 data-top-min="-100%"
+							 data-top-max="100%">
+						<div class="project-info">
+							<h3>Motion-Based Drone Controller</h3>
+							<a href="#" class="read-more" data-modal="modal-project-7">Read More</a>
+						</div>
+					</div>
+				</div>
+			</section>	
+
+
+			<!-- Resume Section Header -->
+			<section id="resume-header" class="resume-section animate-on-scroll" data-delay="0s">
+				<h1>Resume</h1>
+				<a href="assets/files/Logan_Gall_Resume.pdf" download="Logan_Gall_Resume.pdf" class="download-button animate-on-scroll" data-delay="0s">
+					Download Resume
+				</a>
+			</section>
+			<!-- Education Section -->
+			<section id="education">
+				<h2 class="resume-section animate-on-scroll" data-delay="0.3s">Education</h2>
+
+				<div class="education-item animate-on-scroll" data-delay="0.6s">
+					<h4 class="education-title">
+						<strong>Masters of Geographic Information Sciences</strong>
+						<span class="education-dates">Expected May 2025</span>
+					</h4>
+					<div class="resume-details">
+						<p class="resume-location">
+							<span class="resume-institution">University of Minnesota</span>
+							<span class="resume-location-text">Minneapolis, MN</span>
+						</p>
+						<ul>
+							<li><strong>GPA:</strong> 4.0</li>
+							<li><strong>Activities:</strong> GIS Student Organization (GISSO) President, Copter Club President</li>
+							<li><strong>Relevant Coursework:</strong> Advanced Geocomputing, Spatial Database Design, Spatial Data Science II, Digital Signal Processing Design, Spatiotemporal Modeling & Simulation, WebGIS & Services</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="education-item animate-on-scroll" data-delay="0.6s">
+					<h4 class="education-title">
+						<strong>B.S. Data Science, Statistics Minor</strong>
+						<span class="education-dates">Sept. 2019 - May 2023</span>
+					</h4>
+					<div class="resume-details">
+						<p class="resume-location">
+							<span class="resume-institution">University of Minnesota</span>
+							<span class="resume-location-text">Minneapolis, MN</span>
+						</p>
+						<ul>
+							<li><strong>GPA:</strong> 3.78, Dean's List: 4 terms</li>
+							<li><strong>Activities:</strong> Copter Club President, Campus Car Club Vice President, Association for Computing Machinery Member</li>
+							<li><strong>Relevant Coursework:</strong> Analytics and Data Driven Decision Making, Machine Learning Fundamentals, Mathematics of Image and Data Analysis, Operations Research for Data Science, Theory of Statistics</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- Work Experience Section -->
+			<section id="work-experience">
+				<h2 class="resume-section animate-on-scroll" data-delay="0s">Work Experience</h2>
+
+				<div class="work-item animate-on-scroll" data-delay="0.4s">
+					<h4 class="work-title">
+						<strong>Graduate Research Assistant</strong>
+						<span class="work-dates">Jan. 2025 - Present</span>
+					</h4>
+					<div class="resume-details">
+						<p class="resume-location">
+							<span class="resume-institution">University of Minnesota, Department of Geography, Environment, and Society</span>
+							<span class="resume-location-text">Minneapolis, MN</span>
+						</p>
+						<ul>
+							<li>Began design and development of computational hardware chips for spatial processing operations</li>
+							<li>Performed data engineering, solved inquiries, and presented research findings at industry conference events</li>
+							<li>Supported the University of Minnesota’s GeoCommons research, teaching, and engagement activities</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="work-item animate-on-scroll" data-delay="0.4s">
+					<h4 class="work-title">
+						<strong>Graduate Research Assistant</strong>
+						<span class="work-dates">Aug. 2023 - Jan. 2025</span>
+					</h4>
+					<div class="resume-details">
+						<p class="resume-location">
+							<span class="resume-institution">University of Minnesota, GEMS Informatics</span>
+							<span class="resume-location-text">St. Paul, MN</span>
+						</p>
+						<ul>
+							<li>Created machine learning models for spatiotemporal evapotranspiration prediction</li>
+							<li>Designed workflow methods for cloud-centric programming and data sharing</li>
+							<li>Worked on grants, proposals, and papers for irrigation-based agricultural research</li>
+							<li>Designed and implemented data cleaning, preparation, and analysis methodologies</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="work-item animate-on-scroll" data-delay="0.4s">
+					<h4 class="work-title">
+						<strong>Internet Safety Evaluator</strong>
+						<span class="work-dates">Apr. 2020 - Aug. 2023</span>
+					</h4>
+					<div class="resume-details">
+						<p class="resume-location">
+							<span class="resume-institution">TELUS International AI</span>
+							<span class="resume-location-text">Las Vegas, NV</span>
+						</p>
+						<ul>
+							<li>Trained AI to analyze social media posts by evaluating the accuracy of videos and comments</li>
+							<li>Assessed content source trustworthiness to enhance automatic safety flagging systems</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="work-item animate-on-scroll" data-delay="0.4s">
+					<h4 class="work-title">
+						<strong>R&D Data Science Intern</strong>
+						<span class="work-dates">May 2022 - Aug. 2022</span>
+					</h4>
+					<div class="resume-details">
+						<p class="resume-location">
+							<span class="resume-institution">The TORO Company</span>
+							<span class="resume-location-text">Bloomington, MN</span>
+						</p>
+						<ul>
+							<li>Created a machine learning model-based program for sports field management</li>
+							<li>Performed drone flights for analysis of field conditions during tournament play</li>
+							<li>Executed a research study of sports field treatments and their effects on field quality</li>
+							<li>Implemented data cleaning, modeling, and treatment recommendation programs for field management</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			
+			<!-- Skills Section -->
+			<section id="skills">
+				<h2  class="resume-section animate-on-scroll" data-delay="0s">Certifications, Publications, and Skills</h2>
+
+				<div class="skills-item animate-on-scroll" data-delay="0.4s">
+					<h4 class="skills-title">
+						<strong></strong>
+					</h4>
+					<div class="resume-details">
+						<ul>
+							<li><strong>Certifications:</strong>  FAA Part 107 (Professional Drone & UAS Operations)</li>
+							<li><strong>Publications:</strong> Gall, L., Glancy, T., Kantar, M., & Runck, B. C. (2024). A tool for integrating agrometeorological observation data for digital agriculture: A Minnesota case study. Agricultural and Environmental Letters, 16 October 2024. <a href="https://doi.org/10.1002/ael2.20147" target="_blank"> https://doi.org/10.1002/ael2.20147</a>.</li>
+							<li><strong>Data Science:</strong> Cloud Computing, Data Cleaning, Data Engineering, Geospatial Modeling, Machine Learning, Statistics</li>
+							<li><strong>Hardware:</strong> Drones, IoT Sensors, Microcontroller programming (Arduino, ESP-32, Raspberry Pi), Wireless Protocols</li>
+							<li><strong>Programming:</strong> C++, CSS, HTML, JavaScript, Julia, Python, R, SQL, Verilog </li>
+							<li><strong>Python Libraries:</strong> Flask, Folium, MatPlotLib, Numpy, Pandas, Psycopg, PyTorch, SciPy, Tensorflow Keras</li>
+							<li><strong>Tools & Platforms:</strong> ArcGIS Pro, Docker, GitHub, Google Cloud Run, Jupyter Notebooks, Unity, Vivado</li>
+						</ul>
+					</div>
+				</div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar right-sidebar">
+            <!-- Right sidebar content (currently empty) -->
+        </aside>
+    </div>
+
+	<!-- Modals -->
+	<!-- Project 1 Modal -->
+	<div id="modal-project-1" class="modal">
+		<div class="modal-content">
+			<span class="close-button" data-modal="modal-project-1">&times;</span>
+			<h2>Spatial Processing Unit</h2>
+			<p>
+				The Spatial Processing Unit (SPU) is a domain-specific hardware accelerator designed to efficiently process spatial data. Unlike traditional CPU or GPU architectures, which struggle with the inherent spatial dependencies in geospatial computations, SPU introduces a Spatial Instruction Set Architecture (SISA) optimized for operations like raster processing, vector calculations, and spatial AI tasks. This project aims to push the boundaries of spatial data processing by creating a lightweight, efficient chip that can handle geospatial operations with reduced power, size, and computational overhead.
+			</p>
+			<ul>
+				<li><strong>Optimized Spatial Processing:</strong> Implements a novel Spatial Instruction Set Architecture (SISA) designed for geospatial calculations, including raster focal operations, vector transformations, and spatial AI computations.</li>
+				<li><strong>Efficient Hardware Design:</strong> Built as a 4-bit processing unit with multiplexer-based data inputs, supporting complex operations while maintaining a minimal footprint.</li>
+				<li><strong>Customizable Spatial Operations:</strong> Includes dedicated instructions for Manhattan Distance calculations, dot products, focal mean/sum/max pooling, and vector transformations, enabling flexible geospatial analysis.</li>
+				<li><strong>Parallel Processing Potential:</strong> Supports stacked SPU configurations, allowing multiple units to work together to efficiently process large-scale spatial problems.</li>
+				<li><strong>Machine Learning Acceleration:</strong> Enables fundamental AI computations, such as convolution operations for geospatial deep learning applications.</li>
+				<li><strong>TinyTapeout Implementation:</strong> Developed as part of the TinyTapeout project, demonstrating a proof-of-concept for a lightweight ASIC (Application-Specific Integrated Circuit) designed for spatial data.</li>
+			</ul>
+			<p>
+				This project serves as an innovative step toward hardware-accelerated geospatial computing, with potential applications in satellite imagery processing, autonomous navigation, and real-time GIS analytics.
+			</p>
+			
+			<!-- Buttons Section -->
+			<div class="button-container">
+				<a href="https://www.linkedin.com/in/logan-gall" target="_blank" class="modal-button">Contact Me for More Information</a>
+			</div>
+		</div>
+	</div>
+
+    <!-- Project 2 Modal -->
+    <div id="modal-project-2" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal="modal-project-2">&times;</span>
+            <h2>Mini-Rex: Drone-Based Wireless Control Link</h2>
+            <p>
+                Codenamed Mini-Rex, this project is a full hardware/software pipeline designed to wirelessly transmit radio control signals over long distances with near-zero latency. It is built based on robust drone control link protocols ExpressLRS and CRSF. This project expands the availability of input devices, such as joysticks, game controllers, or sensor arrays, into a variety of output devices ranging from FPV drones to computer games to robotics. Mini Rex features a modular architecture, allowing flexibility to nearly any use-case requiring low-latency, long range, easily manageable control.
+            </p>
+			<ul>
+				<li><strong>Versatile Input Integration:</strong> Interfaces with multiple input devices including game controllers, joysticks, and sensors.</li>
+				<li><strong>Long-Range, Low-Latency Communication:</strong> Utilizes ExpressLRS and/or CRSF protocols to ensure rapid, reliable wireless signal transmission.</li>
+				<li><strong>Modular Design:</strong> Separates input processing and output interpretation, allowing users to easily customize the system to suit various applications.</li>
+				<li><strong>Flexible Connectivity Options:</strong> Supports both USB and FTDI serial connections for transmitter modules, accommodating a wide range of hardware.</li>
+				<li><strong>Dual Output Modes:</strong> Enables both emulated HID gamepad signals and PWM outputs, broadening the scope of potential end devices.</li>
+				<li><strong>Low Cost:</strong> Utilizes radio control hardware standard in the FPV world and a Raspberry Pi Pico microcontroller, allowing for a full control setup for under $75.</li>
+			</ul>
+			
+			<!-- Buttons Section -->
+			<div class="button-container">
+				<a href="https://github.com/logan-gall/MiniRex_WirelessControls" target="_blank" class="modal-button">View on Github</a>
+			</div>
+        </div>
+    </div>
+
+    <!-- Project 3 Modal -->
+    <div id="modal-project-3" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal="modal-project-3">&times;</span>
+            <h2>WiFi-Based Indoor Location Tracking</h2>
+            <p>
+			This project explores the use of WiFi signals to determine indoor locations with high accuracy. Traditional GPS technology struggles in indoor environments due to signal interference, making alternative methods necessary. This study leverages WiFi signal strength (RSSI) and neural network models to predict a device’s location within a room. The approach was tested in the Geocommons lab at the University of Minnesota, achieving precise localization with a mean error of about 1 foot. The results demonstrate the feasibility of WiFi-based indoor localization, providing a proof-of-concept for future applications in navigation, smart buildings, and presence detection.
+			</p>
+			<ul>
+				<li><strong>WiFi-Based Positioning:</strong> Utilizes Received Signal Strength Indicator (RSSI) from multiple WiFi access points to estimate device location.</li>
+				<li><strong>High Accuracy:</strong> Achieved an R² score of 0.97 in predicting indoor coordinates, with an average error of approximately 1 foot.</li>
+				<li><strong>Neural Network Modeling:</strong> Developed multiple models, comparing simple distance estimation and full (X, Y) localization.</li>
+				<li><strong>Spatiotemporal Analysis:</strong> Investigated how RSSI values change over distance and time, revealing variability in signal stability.</li>
+				<li><strong>Interactive Visualization:</strong> Created an interactive web tool to explore model predictions and WiFi signal trends dynamically.</li>
+				<li><strong>Future Expansion:</strong> Potential improvements include incorporating LSTM models for better temporal tracking, expanding to larger areas, and integrating additional sensors such as Bluetooth or accelerometers.</li>
+			</ul>
+			
+			<!-- Buttons Section -->
+			<div class="button-container">
+				<a href="https://github.com/logan-gall/MiniRex_WirelessControls" target="_blank" class="modal-button">View on Github</a>
+				<a href="assets/files/LoganGall_IndoorLocationTrackingPaper.pdf" target="_blank" class="modal-button">Download Report</a>
+				<a href="assets/files/LoganGall_IndoorLocationTrackingPresentation.pdf" target="_blank" class="modal-button">Download Presentation</a>
+			</div>
+        </div>
+    </div>
+
+    <!-- Project 4 Modal -->
+    <div id="modal-project-4" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal="modal-project-4">&times;</span>
+            <h2>Project Mélange: LSTM-Based Evapotranspiration Modeling</h2>
+            <p>
+            Project Mélange was a machine learning research initiative that explored the use of LSTM (Long Short-Term Memory) models to estimate actual evapotranspiration (ETa). The project leveraged gridded climate datasets and knowledge-guided machine learning (KGML) techniques to improve prediction accuracy. The goal was to enhance spatial and temporal interpolation and extrapolation of ETa, which is critical for agricultural water management and environmental monitoring.
+            </p>
+			<p>
+			This project integrated multiple data sources, including Ameriflux eddy covariance stations, the National Solar Radiation Database (NSRDB), and the SSEBop dataset, to develop models capable of predicting evapotranspiration with improved accuracy and generalizability.
+			</p>
+			<ul>
+				<li><strong>LSTM-Based Machine Learning:</strong> Applied deep learning techniques for time-series modeling of ETa based on weather variables.</li>
+				<li><strong>Knowledge-Guided Machine Learning (KGML):</strong> Incorporated domain knowledge from the Penman-Monteith equation to refine model predictions.</li>
+				<li><strong>Gridded Data Processing:</strong> Handled large-scale climate datasets (NSRDB & SSEBop) for improved spatial coverage.</li>
+				<li><strong>Custom Loss Function Development:</strong> Integrated physical constraints to enforce realistic predictions, preventing non-physical values like negative ETa.</li>
+				<li><strong>High-Performance Computing:</strong> Utilized SLURM job scheduling on MSI Supercomputers for large-scale model training, requiring up to 275GB RAM.</li>
+				<li><strong>Interpolation & Extrapolation Capabilities:</strong>
+					<ul>
+						<li><strong>Spatial Interpolation:</strong> Filled gaps in gridded ETa estimates using climate data.</li>
+						<li><strong>Temporal Interpolation:</strong> Predicted missing ETa values in time-series observations.</li>
+						<li><strong>Spatial Extrapolation:</strong> Extended ETa estimates to new locations with minimal ground truth data.</li>
+						<li><strong>Temporal Extrapolation:</strong> Forecasted future ETa based on past observations.</li>
+					</ul>
+				</li>
+				<li><strong>Alternative Model Exploration:</strong> Investigated ConvLSTM, diffusion models, and CNN architectures for potential improvements.</li>
+				<li><strong>Scalability & Real-World Application:</strong> Designed to function with minimal weather station data, making it useful for agricultural and environmental applications.</li>
+			</ul>
+            <p>
+            This project demonstrated advanced geospatial AI techniques applied to climate and hydrological modeling, showcasing the potential of deep learning in environmental sciences.
+            </p>
+			
+			<div class="button-container">
+				<a href="https://www.linkedin.com/in/logan-gall" target="_blank" class="modal-button">Contact Me for More Information</a>
+			</div>
+        </div>
+    </div>
+
+    <!-- Project 5 Modal -->
+    <div id="modal-project-5" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal="modal-project-5">&times;</span>
+            <h2>Cloud-Driven Live Location Sharing</h2>
+            <p>
+				A live location sharing web application was developed that allows users to share their real-time location with friends or colleagues. The platform is designed to be lightweight, requiring no additional app downloads, and enables users to input their location manually or by clicking on the map. The system also provides dynamic route calculations to shared locations and real-time updates. Built using Google Cloud infrastructure, the application leverages Flask, Docker, Cloud SQL, and automated deployments to ensure a seamless and scalable experience.
+            </p>
+			<ul>
+				<li><strong>Live Location Sharing:</strong> Users can enter their name, latitude, and longitude, or select a point on the map to share their location in real time.</li>
+				<li><strong>Interactive Web Map:</strong> Built on an OpenStreetMap basemap, the interface allows users to visualize shared locations with clickable markers.</li>
+				<li><strong>Route Calculation:</strong> The app dynamically finds and displays the quickest route from a central location (e.g., Blegen Hall at the University of Minnesota) to any shared point.</li>
+				<li><strong>Cloud-Based Infrastructure:</strong> Utilizes Google Cloud SQL for storing locations, Flask for backend processing, and Docker for scalable deployment via Cloud Build & Run.</li>
+				<li><strong>Real-Time Updates:</strong> Includes a proof-of-concept feature that allows users to ping their device to update their location automatically via the Pushover and Tasker apps.</li>
+				<li><strong>Privacy-Focused:</strong> Users can share their location temporarily without requiring third-party apps that store personal data.</li>
+				<li><strong>Potential Applications:</strong> Ideal for friends, event organizers, or companies needing a lightweight, temporary location-sharing tool for meetups, conferences, or team coordination.</li>
+			</ul>
+			
+			<!-- Buttons Section -->
+			<div class="button-container">
+				<a href="https://github.com/logan-gall/Live_Location_Sharing" target="_blank" class="modal-button">View on Github</a>
+			</div>
+        </div>
+    </div>
+
+	<!-- Project 6 Modal -->
+	<div id="modal-project-6" class="modal">
+		<div class="modal-content">
+			<span class="close-button" data-modal="modal-project-6">&times;</span>
+			<h2>Traffic Impact Prediction Modelling</h2>
+			<p>
+			This project explores the impact of large sporting events on traffic conditions near the University of Minnesota. By leveraging historical traffic data, road network analysis, and machine learning, we developed a system that predicts traffic congestion during major events. The project integrates ESRI’s World Traffic Service, Google Cloud, and ArcGIS Online to build a complete data pipeline, from event data collection to predictive modeling and visualization. The results help commuters, event organizers, and traffic authorities anticipate traffic disruptions and plan accordingly.
+			</p>
+			<ul>
+				<li><strong>Event-Based Traffic Prediction:</strong> Uses historical road network data and machine learning to estimate traffic congestion caused by sporting events.</li>
+				<li><strong>Data Pipeline Automation:</strong> Automates the collection, cleaning, and processing of event and road network data using ArcGIS Pro Notebooks.</li>
+				<li><strong>Machine Learning Models:</strong> Three linear regression models were developed to predict the additional travel cost (delta cost) on roads near event locations.</li>
+				<li><strong>Cloud-Based API & Database:</strong> Stores predicted traffic data in a Google Cloud SQL PostGIS database, accessible via a Flask API deployed on Google Cloud Run.</li>
+				<li><strong>GIS Integration:</strong> Results are visualized in ArcGIS Online through an interactive web map for easy access and interpretation.</li>
+				<li><strong>Comparative Model Analysis:</strong> Evaluated multiple machine learning models to determine the best approach for predicting traffic congestion.</li>
+				<li><strong>Scalability & Future Improvements:</strong> The system can be expanded with additional event data and enhanced with factors like weather conditions or parking data.</li>
+			</ul>
+			
+			<!-- Buttons Section -->
+			<div class="button-container">
+				<a href="assets/files/LoganGall_TrafficImpactPredictionPaper.pdf" target="_blank" class="modal-button">Download Report</a>
+				<a href="https://github.com/logan-gall/TrafficImpactPrediction" target="_blank" class="modal-button">View on GitHub</a>
+			</div>
+		</div>
+	</div>
+
+    <!-- Project 7 Modal -->
+    <div id="modal-project-7" class="modal">
+        <div class="modal-content">
+            <span class="close-button" data-modal="modal-project-7">&times;</span>
+            <h2>Motion-Based Drone Controller</h2>
+            <p>
+            This project reimagines drone simulation control by using a real drone as the controller. By leveraging the drone's built-in inertial measurement unit (IMU) and a fast Python script, the system reads the drone's orientation and translates it into real-time game control inputs. This intuitive method bypasses the typical joystick interface, offering a more natural and engaging user experience for both learning to fly drones and exploring alternative control schemes.
+            </p>
+			<ul>
+				<li><strong>Real-World Input for Simulation:</strong> Utilizes the drone’s actual orientation as a control mechanism, providing a more intuitive interface than traditional joysticks.</li>
+				<li><strong>IMU Integration:</strong> Extracts accelerometer and gyroscope data to determine the drone’s direction and movement.</li>
+				<li><strong>Multi-Wii Serial Protocol:</strong> Communicates directly with the drone using a protocol originally developed for Nintendo Wii controllers.</li>
+				<li><strong>XBox Controller Emulation:</strong> Converts real-time drone orientation into standardized game inputs by emulating an XBox controller.</li>
+				<li><strong>Enhanced User Experience:</strong> Offers an innovative approach that could be extended to advanced input devices and interactive educational tools.</li>
+				<li><strong>Hybrid Control Scheme:</strong> Implements additional throttle control using buttons on an XBox adaptive controller, addressing the IMU's limitations in measuring relative motion.</li>
+			</ul>
+			
+			<!-- Buttons Section -->
+			<div class="button-container">
+				<a href="https://geocommons.umn.edu/projects/motion-based-drone-controller" target="_blank" class="modal-button">View Webpage</a>
+				<a href="https://www.linkedin.com/in/logan-gall" target="_blank" class="modal-button">Contact Me for More Information</a>
+			</div>
+        </div>
+    </div>
+
+	<!-- Thank You Section -->
+	<section id="thank-you-section" class="thank-you-section animate-on-scroll-bottom" data-delay="0s">
+		<div class="thank-you-content">
+			<p>Thank You!</p>
+		</div>
+	</section>
+</body>
+<!-- Link to JavaScript -->
+<script src="js/script.js"></script>
+</html>
