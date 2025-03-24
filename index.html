@@ -50,7 +50,7 @@
                     
                     <!-- Column 3, Row 1: Job Title (Right-Aligned) -->
                     <div class="job-title animate-on-scroll" data-delay="0s">
-                        <p class="job-description">Spatial Engineer</p>
+                        <p class="job-description">Spatial Data Scientist</p>
                     </div>
                     
                     <!-- Column 2, Row 2: Dynamic Text -->
@@ -258,7 +258,7 @@
 						</p>
 						<ul>
 							<li><strong>GPA:</strong> 4.0</li>
-							<li><strong>Activities:</strong> GIS Student Organization (GISSO) President, Copter Club President</li>
+							<li><strong>Activities:</strong> GIS Student Organization (GISSO) President, Copter Club (Drone Club) President</li>
 							<li><strong>Relevant Coursework:</strong> Advanced Geocomputing, Spatial Database Design, Spatial Data Science II, Digital Signal Processing Design, Spatiotemporal Modeling & Simulation, WebGIS & Services</li>
 						</ul>
 					</div>
@@ -276,7 +276,7 @@
 						</p>
 						<ul>
 							<li><strong>GPA:</strong> 3.78, Dean's List: 4 terms</li>
-							<li><strong>Activities:</strong> Copter Club President, Campus Car Club Vice President, Association for Computing Machinery Member</li>
+							<li><strong>Activities:</strong> Copter Club (Drone Club) President, Campus Car Club Vice President, Association for Computing Machinery Member</li>
 							<li><strong>Relevant Coursework:</strong> Analytics and Data Driven Decision Making, Machine Learning Fundamentals, Mathematics of Image and Data Analysis, Operations Research for Data Science, Theory of Statistics</li>
 						</ul>
 					</div>
@@ -395,24 +395,24 @@
 		<div class="modal-content">
 			<span class="close-button" data-modal="modal-project-1">&times;</span>
 			<h2>Spatial Processing Unit</h2>
-			<p>
-				The Spatial Processing Unit (SPU) is a domain-specific hardware accelerator designed to efficiently process spatial data. Unlike traditional CPU or GPU architectures, which struggle with the inherent spatial dependencies in geospatial computations, SPU introduces a Spatial Instruction Set Architecture (SISA) optimized for operations like raster processing, vector calculations, and spatial AI tasks. This project aims to push the boundaries of spatial data processing by creating a lightweight, efficient chip that can handle geospatial operations with reduced power, size, and computational overhead.
-			</p>
-			<ul>
-				<li><strong>Optimized Spatial Processing:</strong> Implements a novel Spatial Instruction Set Architecture (SISA) designed for geospatial calculations, including raster focal operations, vector transformations, and spatial AI computations.</li>
-				<li><strong>Efficient Hardware Design:</strong> Built as a 4-bit processing unit with multiplexer-based data inputs, supporting complex operations while maintaining a minimal footprint.</li>
-				<li><strong>Customizable Spatial Operations:</strong> Includes dedicated instructions for Manhattan Distance calculations, dot products, focal mean/sum/max pooling, and vector transformations, enabling flexible geospatial analysis.</li>
-				<li><strong>Parallel Processing Potential:</strong> Supports stacked SPU configurations, allowing multiple units to work together to efficiently process large-scale spatial problems.</li>
-				<li><strong>Machine Learning Acceleration:</strong> Enables fundamental AI computations, such as convolution operations for geospatial deep learning applications.</li>
-				<li><strong>TinyTapeout Implementation:</strong> Developed as part of the TinyTapeout project, demonstrating a proof-of-concept for a lightweight ASIC (Application-Specific Integrated Circuit) designed for spatial data.</li>
-			</ul>
-			<p>
-				This project serves as an innovative step toward hardware-accelerated geospatial computing, with potential applications in satellite imagery processing, autonomous navigation, and real-time GIS analytics.
-			</p>
+				<p>
+					The TinySPU is a prototype Spatial Processing Unit (SPU) that demonstrates how core GIS and spatial AI operations can be implemented directly in hardware. Designed for the TinyTapeout project, it introduces a compact, 4-bit processor with a Spatial Instruction Set Architecture (SISA) tailored to geospatial workloads. This project showcases the potential for lightweight, low-power chips capable of executing essential spatial operations with minimal computational overhead.
+				</p>
+				<ul>
+					<li><strong>Compact Spatial Instruction Set:</strong> Implements 16 custom opcodes for geospatial tasks, including focal mean/sum/max pooling, dot products, Manhattan Distance, reclassification, and vector area calculations.</li>
+					<li><strong>Purpose-Built Architecture:</strong> Uses four 4-bit inputs (A, B, C, D) and two outputs (M, N), allowing spatial operations on raster rows or coordinate pairs with greater flexibility than traditional ALUs.</li>
+					<li><strong>Optimized for Spatial Logic:</strong> Hardware-level design eliminates redundant calculations in spatial neighborhoods, improving energy efficiency and throughput.</li>
+					<li><strong>Geospatial AI Capabilities:</strong> Supports fundamental operations used in geoAI, such as convolution-style pooling and dot product accumulation.</li>
+					<li><strong>Open and Extensible:</strong> Released as an open-source project, with a test bench to validate functions and a demo bench to showcase classic GIS workflows using spatial hardware instructions.</li>
+					<li><strong>TinyTapeout Integration:</strong> Developed for the TinyTapeout fabrication platform, offering a proof-of-concept for spatial ASICs and demonstrating GIS-on-a-chip as a viable path forward.</li>
+				</ul>
+				<p>
+					This project represents a foundational step toward domain-specific hardware for geospatial computing, with future applications in real-time GIS, satellite image processing, and embedded navigation systems.
+				</p>
 			
 			<!-- Buttons Section -->
 			<div class="button-container">
-				<a href="https://www.linkedin.com/in/logan-gall" target="_blank" class="modal-button">Contact Me for More Information</a>
+				<a href="https://github.com/umn-geocommons/tt_um_tinyspu" target="_blank" class="modal-button">View on Github</a>
 			</div>
 		</div>
 	</div>
