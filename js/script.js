@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typingText = document.getElementById("typing-text");
     const texts = [
         "I am a Problem Solver.",
-        "I am a Data Scientist.",
+        "I am a Data Engineer.",
         "I am a Geospatial Developer."
     ];
 
